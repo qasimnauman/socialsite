@@ -95,12 +95,6 @@ loadData = async () => {
         likes: Post.likes,
         shares: Post.shares
     };
-
-    console.log("Global Post1", globalState.post1);
-    console.log("Global Post2", globalState.post2);
-    console.log("Global Post3", globalState.post3);
-    console.log("Global Post4", globalState.post4);
-    console.log("Global Post5", globalState.post5);
 };
 
 getPost = async (post) => {
@@ -159,53 +153,50 @@ const hashLocationHandler = async () => {
     try {
         let html = await fetch(route.template).then(res => res.text());
 
-        // For #dashboard route
         if (path === 'dashboard') {
             if (globalState.post1) {
-                Object.entries(globalState.post1).forEach(([key, value]) => {
-                    const regex = new RegExp(`{{post1.${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                });
+              Object.entries(globalState.post1).forEach(([key, value]) => {
+                const regex = new RegExp(`{{post1\\.${key}}}`, 'g');
+                html = html.replace(regex, value);
+              });
             }
             if (globalState.post2) {
-                Object.entries(globalState.post2).forEach(([key, value]) => {
-                    const regex = new RegExp(`{{post2.${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                });
+              Object.entries(globalState.post2).forEach(([key, value]) => {
+                const regex = new RegExp(`{{post2\\.${key}}}`, 'g');
+                html = html.replace(regex, value);
+              });
             }
             if (globalState.post3) {
-                Object.entries(globalState.post2).forEach(([key, value]) => {
-                    const regex = new RegExp(`{{post3.${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                });
+              Object.entries(globalState.post3).forEach(([key, value]) => {
+                const regex = new RegExp(`{{post3\\.${key}}}`, 'g');
+                html = html.replace(regex, value);
+              });
             }
             if (globalState.post4) {
-                Object.entries(globalState.post2).forEach(([key, value]) => {
-                    const regex = new RegExp(`{{post4.${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                });
+              Object.entries(globalState.post4).forEach(([key, value]) => {
+                const regex = new RegExp(`{{post4\\.${key}}}`, 'g');
+                html = html.replace(regex, value);
+              });
             }
             if (globalState.post5) {
-                Object.entries(globalState.post2).forEach(([key, value]) => {
-                    const regex = new RegExp(`{{post5.${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                });
+              Object.entries(globalState.post5).forEach(([key, value]) => {
+                const regex = new RegExp(`{{post5\\.${key}}}`, 'g');
+                html = html.replace(regex, value);
+              });
             }
             const friends = globalState.userData.friends || {};
             Object.entries(globalState.userData).forEach(([key, value]) => {
-                if (typeof value === 'object') {
-                    // skip objects here if you want
-                } else {
-                    const regex = new RegExp(`{{${key}}}`, 'g');
-                    html = html.replace(regex, value);
-                }
-            });
-            Object.entries(friends).forEach(([key, value]) => {
+              if (typeof value !== 'object') {
                 const regex = new RegExp(`{{${key}}}`, 'g');
                 html = html.replace(regex, value);
+              }
             });
-
-        }
+            Object.entries(friends).forEach(([key, value]) => {
+              const regex = new RegExp(`{{${key}}}`, 'g');
+              html = html.replace(regex, value);
+            });
+          }
+          
 
         // For #profile route
         if (path === 'profile' && globalState.userData && Object.keys(globalState.userData).length > 0) {
