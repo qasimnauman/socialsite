@@ -1,0 +1,390 @@
+<main>
+  <aside class="left-sidebar">
+    <div class="sidebar-profile">
+      <img
+        src="{{profilePicture}}"
+        alt="User Avatar"
+        class="sidebar-avatar"
+      />
+      <h3 class="sidebar-username">Your Name</h3>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#"><i class="fas fa-newspaper"></i> News Feed</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-tv"></i> Watch</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-store"></i> Marketplace</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-users"></i> Groups</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+      </li>
+    </ul>
+  </aside>
+
+  <section class="feed">
+    <div class="create-post">
+      <div class="create-post-top">
+        <img
+          src="{{profilePicture}}"
+          alt="User Avatar"
+          class="avatar"
+        />
+        <input
+          type="text"
+          placeholder="What's On Your Mind, Sakil?"
+          class="post-input"
+        />
+      </div>
+
+      <hr />
+
+      <div class="create-post-bottom">
+        <div class="create-post-option">
+          <i class="fas fa-video"></i>
+          <span>Live Video</span>
+        </div>
+        <div class="create-post-option">
+          <i class="fas fa-photo-video"></i>
+          <span>Photo/Video</span>
+        </div>
+        <div class="create-post-option">
+          <i class="fas fa-smile"></i>
+          <span>Feeling/Activity</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-post">
+      <div class="fb-post-header">
+        <div class="fb-user-info">
+          <img
+            src="{{post1.authorAvatar}}"
+            alt=""
+            class="fb-avatar"
+          />
+          <div>
+            <h3 class="fb-user-name">
+              {{post1.author}} <i class="fas fa-check-circle fb-verified"></i>
+            </h3>
+            <span class="fb-post-time">{{post1.date}}</span>
+          </div>
+        </div>
+        <div class="fb-post-actions">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <div class="fb-post-content">
+        <p class="fb-post-text">
+          {{post1.content}}
+        </p>
+        <img
+          src="{{post1.image}}"
+          alt="Post Image"
+          class="fb-post-image"
+        />
+      </div>
+
+      <div class="fb-post-stats">
+        <div class="fb-likes">
+          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-angry"></i>
+          <i class="fas fa-sad-cry"></i>
+          Sakil & {{post1.comments}} Others
+        </div>
+        <div class="fb-comments-shares">
+          <span>{{post1.comments}} Comments</span>
+          <span>{{post1.shares}} Shares</span>
+        </div>
+      </div>
+
+      <div class="fb-post-actions-bar">
+        <div class="fb-action"><i class="fas fa-thumbs-up"></i> Like</div>
+        <div class="fb-action"><i class="fas fa-comment-alt"></i> Comment</div>
+        <div class="fb-action"><i class="fas fa-share-square"></i> Share</div>
+        <div class="fb-action fb-profile-dropdown">
+          <img
+            src="{{post1.authorAvatar}}"
+            alt="User"
+            class="fb-avatar-small"
+          />
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-post">
+      <div class="fb-post-header">
+        <div class="fb-user-info">
+          <img
+            src="{{post2.authorAvatar}}"
+            alt=""
+            class="fb-avatar"
+          />
+          <div>
+            <h3 class="fb-user-name">
+              {{post2.author}} <i class="fas fa-check-circle fb-verified"></i>
+            </h3>
+            <span class="fb-post-time">{{post2.date}}</span>
+          </div>
+        </div>
+        <div class="fb-post-actions">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <div class="fb-post-content">
+        <p class="fb-post-text">
+          {{post2.content}}
+        </p>
+        <img
+          src="{{post2.image}}"
+          alt="Post Image"
+          class="fb-post-image"
+        />
+      </div>
+
+      <div class="fb-post-stats">
+        <div class="fb-likes">
+          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-angry"></i>
+          <i class="fas fa-sad-cry"></i>
+          Sakil & {{post2.comments}} Others
+        </div>
+        <div class="fb-comments-shares">
+          <span>{{post2.comments}} Comments</span>
+          <span>{{post2.shares}} Shares</span>
+        </div>
+      </div>
+
+      <div class="fb-post-actions-bar">
+        <div class="fb-action"><i class="fas fa-thumbs-up"></i> Like</div>
+        <div class="fb-action"><i class="fas fa-comment-alt"></i> Comment</div>
+        <div class="fb-action"><i class="fas fa-share-square"></i> Share</div>
+        <div class="fb-action fb-profile-dropdown">
+          <img
+            src="{{post2.authorAvatar}}"
+            alt="User"
+            class="fb-avatar-small"
+          />
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-post">
+      <div class="fb-post-header">
+        <div class="fb-user-info">
+          <img
+            src="{{post3.authorAvatar}}"
+            alt=""
+            class="fb-avatar"
+          />
+          <div>
+            <h3 class="fb-user-name">
+              {{post3.author}} <i class="fas fa-check-circle fb-verified"></i>
+            </h3>
+            <span class="fb-post-time">{{post3.date}}</span>
+          </div>
+        </div>
+        <div class="fb-post-actions">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <div class="fb-post-content">
+        <p class="fb-post-text">
+          {{post3.content}}
+        </p>
+        <img
+          src="{{post3.image}}"
+          alt="Post Image"
+          class="fb-post-image"
+        />
+      </div>
+
+      <div class="fb-post-stats">
+        <div class="fb-likes">
+          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-angry"></i>
+          <i class="fas fa-sad-cry"></i>
+          Sakil & {{post3.comments}} Others
+        </div>
+        <div class="fb-comments-shares">
+          <span>{{post3.comments}} Comments</span>
+          <span>{{post3.shares}} Shares</span>
+        </div>
+      </div>
+
+      <div class="fb-post-actions-bar">
+        <div class="fb-action"><i class="fas fa-thumbs-up"></i> Like</div>
+        <div class="fb-action"><i class="fas fa-comment-alt"></i> Comment</div>
+        <div class="fb-action"><i class="fas fa-share-square"></i> Share</div>
+        <div class="fb-action fb-profile-dropdown">
+          <img
+            src="{{post3.authorAvatar}}"
+            alt="User"
+            class="fb-avatar-small"
+          />
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-post">
+      <div class="fb-post-header">
+        <div class="fb-user-info">
+          <img
+            src="{{post4.authorAvatar}}"
+            alt=""
+            class="fb-avatar"
+          />
+          <div>
+            <h3 class="fb-user-name">
+              {{post4.author}} <i class="fas fa-check-circle fb-verified"></i>
+            </h3>
+            <span class="fb-post-time">{{post4.date}}</span>
+          </div>
+        </div>
+        <div class="fb-post-actions">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <div class="fb-post-content">
+        <p class="fb-post-text">
+          {{post4.content}}
+        </p>
+        <img
+          src="{{post4.image}}"
+          alt="Post Image"
+          class="fb-post-image"
+        />
+      </div>
+
+      <div class="fb-post-stats">
+        <div class="fb-likes">
+          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-angry"></i>
+          <i class="fas fa-sad-cry"></i>
+          Sakil & {{post4.comments}} Others
+        </div>
+        <div class="fb-comments-shares">
+          <span>{{post4.comments}} Comments</span>
+          <span>{{post4.shares}} Shares</span>
+        </div>
+      </div>
+
+      <div class="fb-post-actions-bar">
+        <div class="fb-action"><i class="fas fa-thumbs-up"></i> Like</div>
+        <div class="fb-action"><i class="fas fa-comment-alt"></i> Comment</div>
+        <div class="fb-action"><i class="fas fa-share-square"></i> Share</div>
+        <div class="fb-action fb-profile-dropdown">
+          <img
+            src="{{post4.authorAvatar}}"
+            alt="User"
+            class="fb-avatar-small"
+          />
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-post">
+      <div class="fb-post-header">
+        <div class="fb-user-info">
+          <img
+            src="{{post5.authorAvatar}}"
+            alt=""
+            class="fb-avatar"
+          />
+          <div>
+            <h3 class="fb-user-name">
+              {{post5.author}} <i class="fas fa-check-circle fb-verified"></i>
+            </h3>
+            <span class="fb-post-time">{{post5.date}}</span>
+          </div>
+        </div>
+        <div class="fb-post-actions">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <div class="fb-post-content">
+        <p class="fb-post-text">
+          {{post5.content}}
+        </p>
+        <img
+          src="{{post5.image}}"
+          alt="Post Image"
+          class="fb-post-image"
+        />
+      </div>
+
+      <div class="fb-post-stats">
+        <div class="fb-likes">
+          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-angry"></i>
+          <i class="fas fa-sad-cry"></i>
+          Sakil & {{post5.comments}} Others
+        </div>
+        <div class="fb-comments-shares">
+          <span>{{post5.comments}} Comments</span>
+          <span>{{post5.shares}} Shares</span>
+        </div>
+      </div>
+
+      <div class="fb-post-actions-bar">
+        <div class="fb-action"><i class="fas fa-thumbs-up"></i> Like</div>
+        <div class="fb-action"><i class="fas fa-comment-alt"></i> Comment</div>
+        <div class="fb-action"><i class="fas fa-share-square"></i> Share</div>
+        <div class="fb-action fb-profile-dropdown">
+          <img
+            src="{{post5.authorAvatar}}"
+            alt="User"
+            class="fb-avatar-small"
+          />
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <aside class="right-sidebar">
+    <div class="contacts-header">
+      <h2>Friends</h2>
+      <div class="contacts-icons">
+        <i class="fas fa-video" title="Video Call"></i>
+        <i class="fas fa-search" title="Search"></i>
+        <i class="fas fa-ellipsis-h" title="Options"></i>
+      </div>
+    </div>
+
+    <ul class="contacts-list">
+      <li>
+        <img src="https://via.placeholder.com/30" alt="Contact 1" />
+        <span>Contact 1</span>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/30" alt="Contact 2" />
+        <span>Contact 2</span>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/30" alt="Contact 3" />
+        <span>Contact 3</span>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/30" alt="Contact 4" />
+        <span>Contact 4</span>
+      </li>
+    </ul>
+  </aside>
+</main>

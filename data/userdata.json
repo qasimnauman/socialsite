@@ -1,0 +1,15 @@
+[
+  {
+    "username": "qasim",
+    "fullName": "Qasim Nauman",
+    "password": "qasim123",
+    "email": "qasim@example.com",
+    "age": 20,
+    "profession": "DevOps Engineer",
+    "friends": {
+      "friend1": "Awab",
+      "friend2": "Rehan"
+    },
+    "profilePicture": "https://full-stack--bucket.s3.us-east-1.amazonaws.com/Qasim-Profile.jpg"
+  }
+]
