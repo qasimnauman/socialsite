@@ -6,24 +6,24 @@
         alt="User Avatar"
         class="sidebar-avatar"
       />
-      <h3 class="sidebar-username">Your Name</h3>
+      <h3 class="sidebar-username">{{fullname}}</h3>
     </div>
 
     <ul class="sidebar-nav">
       <li>
-        <a href="#"><i class="fas fa-newspaper"></i> News Feed</a>
+        <a href="#dashboard"><i class="fas fa-newspaper"></i> News Feed</a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-tv"></i> Watch</a>
+        <a href="#dashboard"><i class="fas fa-tv"></i> Watch</a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-store"></i> Marketplace</a>
+        <a href="#dashboard"><i class="fas fa-store"></i> Marketplace</a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-users"></i> Groups</a>
+        <a href="#dashboard"><i class="fas fa-users"></i> Groups</a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="#dashboard"><i class="fas fa-calendar-alt"></i> Events</a>
       </li>
     </ul>
   </aside>
@@ -370,20 +370,12 @@
 
     <ul class="contacts-list">
       <li>
-        <img src="https://via.placeholder.com/30" alt="Contact 1" />
-        <span>Contact 1</span>
+        <img src="{{friend1.avatar}}" alt="Contact 1" />
+        <span>{{friend1.name}}</span>
       </li>
       <li>
-        <img src="https://via.placeholder.com/30" alt="Contact 2" />
-        <span>Contact 2</span>
-      </li>
-      <li>
-        <img src="https://via.placeholder.com/30" alt="Contact 3" />
-        <span>Contact 3</span>
-      </li>
-      <li>
-        <img src="https://via.placeholder.com/30" alt="Contact 4" />
-        <span>Contact 4</span>
+        <img src="{{friend2.avatar}}" alt="Contact 2" />
+        <span>{{friend2.name}}</span>
       </li>
     </ul>
   </aside>

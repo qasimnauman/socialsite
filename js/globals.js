@@ -4,7 +4,9 @@ const globalState = {
     post2: {},
     post3: {},
     post4: {},
-    post5: {}
+    post5: {},
+    friend1: {},
+    friend2: {},
 };
 
 friends = [];

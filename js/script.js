@@ -31,6 +31,26 @@ loadData = async () => {
         return;
     }
 
+    let friends = await getFriend('friend1');
+    let Friend = friends[0];
+    globalState.friend1 = {
+        name: Friend.fullName,
+        avatar: Friend.image,
+        profession: Friend.profession,
+        email: Friend.email,
+        age: Friend.age,
+    };
+
+    friends = await getFriend('friend2');
+    Friend = friends[0];
+    globalState.friend2 = {
+        name: Friend.fullName,
+        avatar: Friend.image,
+        profession: Friend.profession,
+        email: Friend.email,
+        age: Friend.age,
+    };
+
     let posts = await getPost('post1');
     let Post = posts[0];
     globalState.post1 = {
@@ -106,6 +126,15 @@ getPost = async (post) => {
         });
 };
 
+getFriend = async (friend) => {
+    return await fetch(`data/${friend}.json`)
+        .then(res => res.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
+};
+
 document.addEventListener('submit', async function (event) {
     if (event.target.matches('#myForm')) {
         event.preventDefault();
@@ -155,48 +184,60 @@ const hashLocationHandler = async () => {
 
         if (path === 'dashboard') {
             if (globalState.post1) {
-              Object.entries(globalState.post1).forEach(([key, value]) => {
-                const regex = new RegExp(`{{post1\\.${key}}}`, 'g');
-                html = html.replace(regex, value);
-              });
+                Object.entries(globalState.post1).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{post1\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
             }
             if (globalState.post2) {
-              Object.entries(globalState.post2).forEach(([key, value]) => {
-                const regex = new RegExp(`{{post2\\.${key}}}`, 'g');
-                html = html.replace(regex, value);
-              });
+                Object.entries(globalState.post2).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{post2\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
             }
             if (globalState.post3) {
-              Object.entries(globalState.post3).forEach(([key, value]) => {
-                const regex = new RegExp(`{{post3\\.${key}}}`, 'g');
-                html = html.replace(regex, value);
-              });
+                Object.entries(globalState.post3).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{post3\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
             }
             if (globalState.post4) {
-              Object.entries(globalState.post4).forEach(([key, value]) => {
-                const regex = new RegExp(`{{post4\\.${key}}}`, 'g');
-                html = html.replace(regex, value);
-              });
+                Object.entries(globalState.post4).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{post4\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
             }
             if (globalState.post5) {
-              Object.entries(globalState.post5).forEach(([key, value]) => {
-                const regex = new RegExp(`{{post5\\.${key}}}`, 'g');
-                html = html.replace(regex, value);
-              });
+                Object.entries(globalState.post5).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{post5\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
+            }
+            if (globalState.friend1) {
+                Object.entries(globalState.friend1).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{friend1\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
+            }
+            if (globalState.friend2) {
+                Object.entries(globalState.friend2).forEach(([key, value]) => {
+                    const regex = new RegExp(`{{friend2\\.${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                });
             }
             const friends = globalState.userData.friends || {};
             Object.entries(globalState.userData).forEach(([key, value]) => {
-              if (typeof value !== 'object') {
-                const regex = new RegExp(`{{${key}}}`, 'g');
-                html = html.replace(regex, value);
-              }
+                if (typeof value !== 'object') {
+                    const regex = new RegExp(`{{${key}}}`, 'g');
+                    html = html.replace(regex, value);
+                }
             });
             Object.entries(friends).forEach(([key, value]) => {
-              const regex = new RegExp(`{{${key}}}`, 'g');
-              html = html.replace(regex, value);
+                const regex = new RegExp(`{{${key}}}`, 'g');
+                html = html.replace(regex, value);
             });
-          }
-          
+        }
+
 
         // For #profile route
         if (path === 'profile' && globalState.userData && Object.keys(globalState.userData).length > 0) {
@@ -232,7 +273,7 @@ window.addEventListener('load', async () => {
     setTimeout(async () => {
         await loadData();
         hashLocationHandler();
-    }, 200);
+    }, 50);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
