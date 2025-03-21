@@ -18,5 +18,10 @@ const HashRoutes = {
         template: 'templates/profile.html',
         title: 'Profile | ' + urlPageTitle,
         content: 'This is the Profile page'
+    },
+    messages: {
+        template: 'templates/message.html',
+        title: 'Messages | ' + urlPageTitle,
+        content: 'This is the Messages page'
     }
 };

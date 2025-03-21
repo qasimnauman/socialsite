@@ -41,6 +41,8 @@ loadData = async () => {
         age: Friend.age,
     };
 
+    console.log(globalState.friend1);
+
     friends = await getFriend('friend2');
     Friend = friends[0];
     globalState.friend2 = {
@@ -50,6 +52,8 @@ loadData = async () => {
         email: Friend.email,
         age: Friend.age,
     };
+
+    console.log(globalState.friend2);
 
     let posts = await getPost('post1');
     let Post = posts[0];
